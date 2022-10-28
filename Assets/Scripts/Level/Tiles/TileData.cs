@@ -21,7 +21,7 @@ namespace TKOU.SimAI.Levels
 
         Sprite IAmData.DataIcon => tileSprite;
 
-        string IAmData.DataPrice => "0";
+        int IAmData.DataPrice => 0;
 
         string IAmData.DataName => tileName;
     }

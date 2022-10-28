@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class IncomeTextController : MonoBehaviour
+public class BuildingCashTextController : MonoBehaviour
 {
     [SerializeField]
     private GameObject incomeText;

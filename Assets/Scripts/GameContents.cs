@@ -23,7 +23,14 @@ namespace TKOU.SimAI
 
         public void LoadAll()
         {
+            player.cash = 200;
+            player.ownedBuildings = 0;
+            player.spentMoney = 0;
 
+            foreach(var building in buildings)
+            {
+                building.BuildingPrice = Random.Range(50, 150);
+            }
         }
         #endif
     }

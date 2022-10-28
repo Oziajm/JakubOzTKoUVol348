@@ -18,9 +18,9 @@ namespace TKOU.SimAI
         string DataName { get; }
 
         /// <summary>
-        /// Name representing this data.
+        /// Price representing this data.
         /// </summary>
-        string DataPrice { get; }
+        int DataPrice { get; }
 
         /// <summary>
         /// The prefab for this data, if any

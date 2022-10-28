@@ -56,7 +56,7 @@ namespace TKOU.SimAI
             }
         }
 
-        public void AttemptToBuildSelection()
+        public void AttemptToBuildSelection(GameContents contents)
         {
             if(ghostGameObject == null)
             {
@@ -71,11 +71,18 @@ namespace TKOU.SimAI
             if(BuildSelection is BuildingData buildingData 
                 && BuildTarget is TileEntity tileEntity)
             {
-                Building building = new Building(buildingData, tileEntity.Tile);
-                tileEntity.Tile.AddObject(building);
-                BuildingEntity.SpawnEntity(building);
+                if (contents.player.cash > buildingData.BuildingPrice)
+                {
+                    contents.player.cash -= buildingData.BuildingPrice;
+                    contents.player.spentMoney += buildingData.BuildingPrice;
+                    contents.player.ownedBuildings++;
 
-                BuildSelection = null;
+                    Building building = new Building(buildingData, tileEntity.Tile);
+                    tileEntity.Tile.AddObject(building);
+                    BuildingEntity.SpawnEntity(building);
+
+                    BuildSelection = null;
+                }
             }
         }
 
@@ -120,7 +127,7 @@ namespace TKOU.SimAI
 
             ghostGameObject = new GameObject();
             ghostGameObject.SetActive(false);
-            Object instantiatedObject = GameObject.Instantiate(prefab, ghostGameObject.transform);
+            GameObject.Instantiate(prefab, ghostGameObject.transform);
 
             Behaviour[] behaviours = ghostGameObject.GetComponentsInChildren<Behaviour>();
 

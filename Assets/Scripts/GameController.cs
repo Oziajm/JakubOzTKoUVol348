@@ -37,8 +37,6 @@ namespace TKOU.SimAI
         [SerializeField]
         private Vector3 singleTileSize = new Vector3(30.0f, 5.0f, 30.0f);
 
-        private Coroutine incomeCoroutine;
-
         [field: SerializeField]
         public GameCamera GameCamera { get; private set; }
 
@@ -77,15 +75,20 @@ namespace TKOU.SimAI
             }
         }
 
+        private void Update()
+        {
+            if(Contents.player.cash > 500)
+            {
+                StopGame();
+            }
+        }
+
         #endregion Unity methods
 
         #region Public methods
         public void RunGame()
         {
-            if(incomeCoroutine == null)
-            {
-                incomeCoroutine = StartCoroutine(IncomeCoroutine());
-            }
+            Contents.LoadAll();
 
             if (IsGameRunning)
             {
@@ -122,22 +125,13 @@ namespace TKOU.SimAI
 
             IsGameRunning = false;
             OnGameEnd?.Invoke();
-
-            StopCoroutine(IncomeCoroutine());
         }
 
         #endregion Public methods
 
         #region Private Methods
 
-        private IEnumerator IncomeCoroutine()
-        {
-            while (true)
-            {
-                Contents.player.cash += (10 * Contents.player.ownedBuildings);
-                yield return new WaitForSeconds(5f);
-            }
-        }
+
 
         #endregion
     }

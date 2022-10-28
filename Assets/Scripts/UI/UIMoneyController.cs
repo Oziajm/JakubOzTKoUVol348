@@ -16,27 +16,23 @@ namespace TKOU.SimAI.UI
         [SerializeField]
         private TextMeshProUGUI cashText;
 
+        [SerializeField]
+        private TextMeshProUGUI spentText;
+
+        [SerializeField]
+        private TextMeshProUGUI incomeText;
+
         #endregion Variables
 
         #region Unity methods
 
         private void Update()
         {
-            cashText.text = Contents.player.cash.ToString() +"$";
+            cashText.text = Contents.player.cash.ToString() +" $ ";
+            spentText.text = " - " + Contents.player.spentMoney.ToString() + " $ ";
+            incomeText.text = " + " + (Contents.player.ownedBuildings*10).ToString() + " $ / 5s";
         }
 
         #endregion Unity methods
-
-        #region Private methods
-
-
-
-        #endregion Private methods
-
-        #region Event callbacks
-
-
-
-        #endregion Event callbacks
     }
 }

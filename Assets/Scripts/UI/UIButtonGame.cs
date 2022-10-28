@@ -70,7 +70,7 @@ namespace TKOU.SimAI
             if (Data != null)
             {
                 nameText.text = Data.DataName;
-                priceText.text = Data.DataPrice;
+                priceText.text = Data.DataPrice.ToString();
                 iconImage.sprite = Data.DataIcon;
 
                 nameText.gameObject.SetActive(string.IsNullOrEmpty(nameText.text) == false);

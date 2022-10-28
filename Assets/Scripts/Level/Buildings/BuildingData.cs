@@ -17,11 +17,14 @@ namespace TKOU.SimAI.Levels
         [field:SerializeField]
         public string BuildingName { get; private set; }
 
+        [field: SerializeField]
+        public int BuildingPrice = 0;
+
         Sprite IAmData.DataIcon => BuildingSprite;
 
         string IAmData.DataName => BuildingName;
 
-        string IAmData.DataPrice => Random.Range(50,150).ToString();
+        int IAmData.DataPrice => BuildingPrice;
 
         IAmEntity IAmData.EntityPrefab => BuildingEntityPrefab;
     }

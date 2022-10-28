@@ -15,6 +15,9 @@ namespace TKOU.SimAI
         [SerializeField]
         private PlayerInput playerInput;
 
+        [SerializeField]
+        private GameContents Contests;
+
         private new IAmCamera camera;
         private IAmEntity selectedEntity;
         private IAmEntity hoveredEntity;
@@ -108,7 +111,7 @@ namespace TKOU.SimAI
 
             for (int i = 0; i < hits.Length; i++)
             {
-                underCursorEntity = hits[i].collider.GetComponentInChildren<IAmEntity>();
+                underCursorEntity = hits[i].collider.GetComponentInChildren<IAmEntity>(); 
 
                 if (underCursorEntity != null)
                 {
@@ -216,7 +219,7 @@ namespace TKOU.SimAI
             {
                 if(buildHandler.BuildSelection != null)
                 {
-                    buildHandler.AttemptToBuildSelection();
+                    buildHandler.AttemptToBuildSelection(Contests);
                 }
                 else
                 {

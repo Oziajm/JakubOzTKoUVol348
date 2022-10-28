@@ -8,6 +8,8 @@ namespace TKOU.SimAI.Levels
     {
         public int cash = 200;
 
+        public int spentMoney = 0;
+
         public int ownedBuildings = 0;
 
         public string playerName;

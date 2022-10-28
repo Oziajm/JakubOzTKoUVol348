@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 854058189914203186}
   - component: {fileID: 7935827422500895587}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Cash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 1344061787900817457}
   - component: {fileID: 1344061787900817456}
   - component: {fileID: 1344061787900817459}
+  - component: {fileID: 6639475656573436225}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -275,6 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90cebee4e3088a74cb3fb17362ef2e57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Contents: {fileID: 0}
 --- !u!54 &1344061787900817459
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -291,6 +293,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &6639475656573436225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344061787900817422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb9a59475e28d304393bd77722d07dcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contents: {fileID: 11400000, guid: 849124940b8061b4cb4f13be04f86179, type: 2}
 --- !u!1 &5545532556561724986
 GameObject:
   m_ObjectHideFlags: 0

@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRICE
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -500,7 +500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e7d84149c1c6744ae813296878b014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Contents: {fileID: 11400000, guid: 849124940b8061b4cb4f13be04f86179, type: 2}
   button: {fileID: 7194116889054979274}
   nameText: {fileID: 6759578119662685241}
   priceText: {fileID: 7093909748439937443}
