@@ -5,27 +5,29 @@ using TMPro;
 
 public class BuildingCashTextController : MonoBehaviour
 {
+    public int buildingPrice = 0;
+
     [SerializeField]
-    private TextMeshProUGUI incomeText;
+    private TextMeshProUGUI incomeText; 
 
     private bool shownCosts = false;
 
-    public void StartPriceAnimation(int buildingPrice)
+    private void Start()
     {
-        StartCoroutine(IncomeCoroutine(buildingPrice));
+        StartCoroutine(IncomeCoroutine());
     }
 
-    private IEnumerator IncomeCoroutine(int buildingPrice)
+    private IEnumerator IncomeCoroutine()
     {
         while (true)
         {
             incomeText.color = shownCosts ? Color.green : Color.red;
             incomeText.text = shownCosts ? "+10" : "-" + buildingPrice.ToString();
-            incomeText.gameObject.SetActive(false);
-            yield return new WaitForSeconds(3.5f);
             incomeText.gameObject.SetActive(true);
-            shownCosts = true;
             yield return new WaitForSeconds(0.5f);
+            incomeText.gameObject.SetActive(false);
+            shownCosts = true;
+            yield return new WaitForSeconds(4.5f);
         }
     }
 }

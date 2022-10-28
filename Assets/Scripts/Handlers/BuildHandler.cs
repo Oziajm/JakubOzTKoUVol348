@@ -77,6 +77,8 @@ namespace TKOU.SimAI
                     contents.player.spentMoney += buildingData.BuildingPrice;
                     contents.player.ownedBuildings++;
 
+                    buildingData.BuildingEntityPrefab.gameObject.GetComponent<BuildingCashTextController>().buildingPrice = buildingData.BuildingPrice;
+
                     Building building = new Building(buildingData, tileEntity.Tile);
                     tileEntity.Tile.AddObject(building);
                     BuildingEntity.SpawnEntity(building);
