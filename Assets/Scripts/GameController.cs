@@ -77,7 +77,7 @@ namespace TKOU.SimAI
 
         private void Update()
         {
-            if(Contents.player.cash > 500)
+            if(Contents.player.cash > 500 && IsGameRunning)
             {
                 StopGame();
             }
