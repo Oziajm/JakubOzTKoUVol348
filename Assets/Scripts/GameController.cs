@@ -121,6 +121,7 @@ namespace TKOU.SimAI
                 return;
             }
 
+            Player.DeleteBuildings();
             levelController.StopLevel();
 
             IsGameRunning = false;

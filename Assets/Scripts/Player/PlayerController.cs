@@ -97,6 +97,11 @@ namespace TKOU.SimAI
             this.camera = camera;
         }
 
+        public void DeleteBuildings()
+        {
+            buildHandler.DeleteBuildings();
+        }
+
         private void UpdateEntityUnderCursor()
         {
             Ray ray = camera.Camera.ScreenPointToRay(Mouse.current.position.ReadValue());

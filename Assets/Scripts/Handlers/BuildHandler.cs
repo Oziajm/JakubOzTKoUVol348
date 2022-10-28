@@ -16,6 +16,8 @@ namespace TKOU.SimAI
 
         private IAmEntity buildTarget;
 
+        private List<BuildingEntity> buildings = new List<BuildingEntity>();
+
         public IAmEntity BuildTarget 
         {
             get
@@ -81,10 +83,20 @@ namespace TKOU.SimAI
 
                     Building building = new Building(buildingData, tileEntity.Tile);
                     tileEntity.Tile.AddObject(building);
-                    BuildingEntity.SpawnEntity(building);
+
+                    buildings.Add(BuildingEntity.SpawnEntity(building));
+
 
                     BuildSelection = null;
                 }
+            }
+        }
+
+        public void DeleteBuildings()
+        {
+            foreach(var building in buildings)
+            {
+                building.Destroy();
             }
         }
 
