@@ -25,3 +25,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 199403cbda4082c4f94c513d6d9e2cb5, type: 2}
   - {fileID: 11400000, guid: a4ed58aa87a435e4abcc5e7ff1c6ac58, type: 2}
   - {fileID: 11400000, guid: de849b41635e12d4cbc0ad69590e06c5, type: 2}
+  player: {fileID: 11400000, guid: 32b3cf55be6828843a37587ee8c8684c, type: 2}

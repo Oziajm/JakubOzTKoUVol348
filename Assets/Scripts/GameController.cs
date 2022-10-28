@@ -132,8 +132,11 @@ namespace TKOU.SimAI
 
         private IEnumerator IncomeCoroutine()
         {
-            Contents.player.cash += (10 * Contents.player.ownedBuildings);
-            yield return new WaitForSeconds(5f);
+            while (true)
+            {
+                Contents.player.cash += (10 * Contents.player.ownedBuildings);
+                yield return new WaitForSeconds(5f);
+            }
         }
 
         #endregion

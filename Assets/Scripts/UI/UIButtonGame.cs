@@ -67,7 +67,7 @@ namespace TKOU.SimAI
 
         public void UpdateUI()
         {
-            if(Data != null)
+            if (Data != null)
             {
                 nameText.text = Data.DataName;
                 priceText.text = Data.DataPrice;
@@ -87,7 +87,6 @@ namespace TKOU.SimAI
                 priceText.gameObject.SetActive(true);
                 iconImage.gameObject.SetActive(false);
             }
-
         }
 
         #endregion Private methods
