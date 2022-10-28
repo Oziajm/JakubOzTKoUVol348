@@ -3,6 +3,7 @@ using TKOU.SimAI.Levels;
 using TKOU.SimAI.Camera;
 using System.Collections.Generic;
 using TKOU.SimAI.Highlights;
+using System.Collections;
 
 namespace TKOU.SimAI
 {
@@ -35,6 +36,8 @@ namespace TKOU.SimAI
 
         [SerializeField]
         private Vector3 singleTileSize = new Vector3(30.0f, 5.0f, 30.0f);
+
+        private Coroutine incomeCoroutine;
 
         [field: SerializeField]
         public GameCamera GameCamera { get; private set; }
@@ -79,6 +82,11 @@ namespace TKOU.SimAI
         #region Public methods
         public void RunGame()
         {
+            if(incomeCoroutine == null)
+            {
+                incomeCoroutine = StartCoroutine(IncomeCoroutine());
+            }
+
             if (IsGameRunning)
             {
                 Debug.LogError("Tried to run game that is already running!");
@@ -114,8 +122,20 @@ namespace TKOU.SimAI
 
             IsGameRunning = false;
             OnGameEnd?.Invoke();
+
+            StopCoroutine(IncomeCoroutine());
         }
 
         #endregion Public methods
+
+        #region Private Methods
+
+        private IEnumerator IncomeCoroutine()
+        {
+            Contents.player.cash += (10 * Contents.player.ownedBuildings);
+            yield return new WaitForSeconds(5f);
+        }
+
+        #endregion
     }
 }

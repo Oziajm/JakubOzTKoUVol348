@@ -47,8 +47,6 @@ namespace TKOU.SimAI
 
         private void Awake()
         {
-
-
             button.onClick.AddListener(Button_OnClick);
         }
 
@@ -89,6 +87,7 @@ namespace TKOU.SimAI
                 priceText.gameObject.SetActive(true);
                 iconImage.gameObject.SetActive(false);
             }
+
         }
 
         #endregion Private methods
