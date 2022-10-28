@@ -8,25 +8,22 @@ namespace TKOU.SimAI
     /// </summary>
     public class BuildingEntity : MonoBehaviour, IAmEntity
     {
-        [SerializeField]
-        private GameContents Contents;
-
         public Building Building { get; private set; }
         
         public static BuildingEntity SpawnEntity(Building ownerBuilding)
         {
-                BuildingData data = ownerBuilding.buildingData;
+            BuildingData data = ownerBuilding.buildingData;
 
-                if (data == null)
-                {
-                    Debug.LogError($"Can't spawn a building, {nameof(data.BuildingEntityPrefab)} is null!");
-                    return null;
-                }
+            if (data == null)
+            {
+                Debug.LogError($"Can't spawn a building, {nameof(data.BuildingEntityPrefab)} is null!");
+                return null;
+            }
 
-                BuildingEntity buildingEntity = Instantiate(data.BuildingEntityPrefab);
-                buildingEntity.Initialize(ownerBuilding);
+            BuildingEntity buildingEntity = Instantiate(data.BuildingEntityPrefab);
+            buildingEntity.Initialize(ownerBuilding);
 
-                return buildingEntity;
+            return buildingEntity;
         }
 
         public void Destroy()
