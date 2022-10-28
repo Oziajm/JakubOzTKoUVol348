@@ -23,9 +23,16 @@ namespace TKOU.SimAI
         private TextMeshProUGUI nameText;
 
         [SerializeField]
+        private TextMeshProUGUI priceText;
+
+        [SerializeField]
+        private TextMeshProUGUI cashText;
+
+        [SerializeField]
         private Image iconImage;
 
         private const string nullDataName = "Empty";
+        private const string nullDataPrice = "0";
         private const Sprite nullDataSprite = null;
 
         #endregion Variables
@@ -40,6 +47,8 @@ namespace TKOU.SimAI
 
         private void Awake()
         {
+
+
             button.onClick.AddListener(Button_OnClick);
         }
 
@@ -63,17 +72,21 @@ namespace TKOU.SimAI
             if(Data != null)
             {
                 nameText.text = Data.DataName;
+                priceText.text = Data.DataPrice;
                 iconImage.sprite = Data.DataIcon;
 
                 nameText.gameObject.SetActive(string.IsNullOrEmpty(nameText.text) == false);
+                priceText.gameObject.SetActive(string.IsNullOrEmpty(priceText.text) == false);
                 iconImage.gameObject.SetActive(iconImage.sprite != null);
             }
             else
             {
                 nameText.text = nullDataName;
+                priceText.text = nullDataPrice;
                 iconImage.sprite = nullDataSprite;
 
                 nameText.gameObject.SetActive(true);
+                priceText.gameObject.SetActive(true);
                 iconImage.gameObject.SetActive(false);
             }
         }

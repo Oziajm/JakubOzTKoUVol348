@@ -18,6 +18,11 @@ namespace TKOU.SimAI
         string DataName { get; }
 
         /// <summary>
+        /// Name representing this data.
+        /// </summary>
+        string DataPrice { get; }
+
+        /// <summary>
         /// The prefab for this data, if any
         /// </summary>
         public IAmEntity EntityPrefab { get; }

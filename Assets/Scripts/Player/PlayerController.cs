@@ -142,7 +142,6 @@ namespace TKOU.SimAI
             {
                 return;
             }
-
             buildHandler.BuildTarget = underCursorEntity;
         }
 

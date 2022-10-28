@@ -21,6 +21,8 @@ namespace TKOU.SimAI.Levels
 
         string IAmData.DataName => BuildingName;
 
+        string IAmData.DataPrice => Random.Range(50,150).ToString();
+
         IAmEntity IAmData.EntityPrefab => BuildingEntityPrefab;
     }
 }

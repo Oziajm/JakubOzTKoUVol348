@@ -16,12 +16,17 @@ namespace TKOU.SimAI
         public TileData[] tiles;
         public BuildingData[] buildings;
 
-        #if UNITY_EDITOR
-
         [ContextMenu(nameof(LoadAll))]
+
+#if UNITY_EDITOR
+        private void Awake()
+        {
+            LoadAll();
+        }
+
         public void LoadAll()
         {
-            
+
         }
 
         #endif

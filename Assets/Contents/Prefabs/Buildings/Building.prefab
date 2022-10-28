@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1344061787900817456}
   - component: {fileID: 1344061787900817459}
   m_Layer: 0
-  m_Name: Building-Small House
+  m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
